@@ -27,12 +27,13 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    background-color: white;
     img {
         width: 100%;
+        mix-blend-mode: multiply;
     }
     h1 {
         font-style: oblique;
+        color: #3f3f3f;
     }
 }
 </style>

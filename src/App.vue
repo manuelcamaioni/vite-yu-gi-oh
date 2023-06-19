@@ -24,8 +24,11 @@ export default {
 * {
     font-family: "Roboto", sans-serif;
 }
-div#app {
+body {
+    height: 100vh;
     background-color: rgb(255, 158, 141);
+}
+div#app {
     padding-bottom: 2rem;
 }
 </style>

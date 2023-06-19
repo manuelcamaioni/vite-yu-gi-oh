@@ -28,10 +28,18 @@ export default {
     overflow: hidden;
     width: calc(100% / 5 - 1rem);
     margin: 1rem 0.5rem;
+    background-color: rgb(214, 155, 112);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border: 1px solid rgb(180, 136, 105);
+    .desc-box {
+        color: rgb(255, 255, 255);
+    }
     .img-container {
         width: 100%;
         img {
             width: 100%;
+            border-radius: 0.375rem;
         }
     }
 }
