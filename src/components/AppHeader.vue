@@ -1,10 +1,19 @@
 <template>
-    <header class="d-flex align-items-center">
-        <img
-            src="https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es"
-            alt=""
-            class="w-25" />
-        <h1>Yu-Gi-Oh API</h1>
+    <header class="py-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <img
+                        src="https://vignette1.wikia.nocookie.net/yugiohenespanol/images/a/aa/Yugioh_anime_logo.jpg/revision/latest?cb=20130310042737&path-prefix=es"
+                        alt="" />
+                </div>
+                <div
+                    class="col-6 d-flex justify-content-center align-items-center">
+                    <h1>Yu-Gi-Oh API</h1>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
     </header>
 </template>
 
@@ -16,4 +25,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+    background-color: white;
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-style: oblique;
+    }
+}
+</style>

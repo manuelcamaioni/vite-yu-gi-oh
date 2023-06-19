@@ -1,8 +1,8 @@
 <template>
     <LoaderComponent v-if="CardsList.length === 0" />
 
-    <section v-else class="card">
-        <div class="container m-2">
+    <section v-else>
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h2 class="found-cards px-3">
@@ -67,7 +67,7 @@ LoaderComponent {
     width: 100%;
 }
 section {
-    margin: auto;
+    margin: 3rem auto;
     width: 70%;
     background-color: white;
     h2.found-cards {

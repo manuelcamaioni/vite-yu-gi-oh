@@ -5,7 +5,7 @@
         </div>
         <div class="desc-box text-center p-2">
             <h2 class="fs-5">{{ name }}</h2>
-            <p>{{ archetype }}</p>
+            <p class="mb-0">{{ archetype }}</p>
         </div>
     </div>
 </template>
