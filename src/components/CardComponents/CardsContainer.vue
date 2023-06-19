@@ -1,6 +1,8 @@
 <template>
-    <section class="card">
-        <div class="container">
+    <LoaderComponent v-if="CardsList.length === 0" />
+
+    <section v-else class="card">
+        <div class="container m-2">
             <div class="row">
                 <div class="col-12">
                     <h2 class="found-cards px-3">
@@ -25,13 +27,18 @@
 
 <script>
 import SingleCard from "./SingleCard.vue";
+import LoaderComponent from "../LoaderComponent.vue";
 import axios from "axios";
+import { store } from "../../store.js";
 export default {
     components: {
         SingleCard,
+        LoaderComponent,
     },
+
     data() {
         return {
+            store,
             CardsList: [],
         };
     },
@@ -42,11 +49,10 @@ export default {
             )
             .then((response) => {
                 // handle success
-                response.data.data.forEach((element) => {
-                    this.CardsList.push(element);
-                });
 
-                console.log(this.CardsList);
+                setTimeout(() => {
+                    this.CardsList = response.data.data;
+                }, 5000);
             })
             .catch(function (error) {
                 // handle error
@@ -57,6 +63,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+LoaderComponent {
+    width: 100%;
+}
 section {
     margin: auto;
     width: 70%;

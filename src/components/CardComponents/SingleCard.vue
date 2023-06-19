@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="img-container">
-            <img :src="image" alt="" />
+            <img :src="image" :alt="name + ' card'" />
         </div>
         <div class="desc-box text-center p-2">
             <h2 class="fs-5">{{ name }}</h2>
