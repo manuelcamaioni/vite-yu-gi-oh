@@ -17,7 +17,6 @@ export default {
             CardsList: [],
             ArchetypeList: [],
             apiURL: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0",
-            searched: this.searchCards(),
         };
     },
     methods: {
@@ -38,8 +37,6 @@ export default {
             axios
                 .get(`${this.apiURL}`)
                 .then((response) => {
-                    // handle success
-                    console.log(response.data.data);
                     response.data.data.forEach((element, index) => {
                         if (
                             element.archetype !== undefined &&
@@ -48,8 +45,6 @@ export default {
                             this.ArchetypeList.push(element.archetype);
                         }
                     });
-
-                    console.log(this.ArchetypeList);
                 })
                 .catch(function (error) {
                     // handle error
@@ -61,7 +56,7 @@ export default {
                 .get(`${this.apiURL}&archetype=${archetype}`)
                 .then((response) => {
                     // handle success
-                    this.CardsList = [];
+
                     this.CardsList = response.data.data;
                 })
                 .catch(function (error) {
@@ -76,10 +71,8 @@ export default {
     },
 
     created() {
-        setTimeout(() => {
-            this.searchCards();
-            this.getArchetypes();
-        }, 3000);
+        this.searchCards();
+        this.getArchetypes();
     },
 };
 </script>
