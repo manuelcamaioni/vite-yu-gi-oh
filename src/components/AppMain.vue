@@ -1,6 +1,8 @@
 <template>
     <main>
-        <SearchByArchetype :ArchetypeList="ArchetypeList" />
+        <SearchByArchetype
+            @sort="sortArchetypes"
+            :ArchetypeList="ArchetypeList" />
         <CardsContainer :CardsList="CardsList" />
     </main>
 </template>
@@ -14,7 +16,7 @@ export default {
         return {
             CardsList: [],
             ArchetypeList: [],
-            apiURL: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=78",
+            apiURL: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0",
             searched: this.searchCards(),
         };
     },
@@ -48,6 +50,19 @@ export default {
                     });
 
                     console.log(this.ArchetypeList);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                });
+        },
+        sortArchetypes(archetype = "") {
+            axios
+                .get(`${this.apiURL}&archetype=${archetype}`)
+                .then((response) => {
+                    // handle success
+                    this.CardsList = [];
+                    this.CardsList = response.data.data;
                 })
                 .catch(function (error) {
                     // handle error

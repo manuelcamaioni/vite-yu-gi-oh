@@ -1,7 +1,13 @@
 <template>
-    <select class="form-select" aria-label="Default select example">
-        <option>Open this select menu</option>
-        <option v-for="(archetype, index) in ArchetypeList" :value="index + 1">
+    <select
+        class="form-select"
+        aria-label="Default select example"
+        v-model="archetype">
+        <option>Search by Archetype</option>
+        <option
+            v-for="(archetype, index) in ArchetypeList"
+            :value="archetype"
+            @click="$emit('sort', archetype)">
             {{ archetype }}
         </option>
     </select>
@@ -14,11 +20,6 @@ export default {
     },
     props: {
         ArchetypeList: Array,
-    },
-    mounted() {
-        // setTimeout(() => {
-        //     console.log(this.CardsList, "originale");
-        // }, 5000);
     },
 };
 </script>
