@@ -35,7 +35,7 @@ export default {
         },
         getArchetypes() {
             axios
-                .get(`${this.apiURL}`)
+                .get(this.apiURL)
                 .then((response) => {
                     response.data.data.forEach((element, index) => {
                         if (
@@ -53,7 +53,7 @@ export default {
         },
         sortArchetypes(archetype = "") {
             axios
-                .get(`${this.apiURL}&archetype=${archetype}`)
+                .get(this.apiURL, { params: { archetype: archetype } })
                 .then((response) => {
                     // handle success
 

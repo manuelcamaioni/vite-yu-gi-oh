@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <div class="container">
         <label for="searchArch">Search by Archetype</label>
         <select
             name="searchArch"
@@ -13,7 +13,7 @@
                 {{ archetype }}
             </option>
         </select>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -30,18 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-    width: 100%;
-
-    label {
-        color: #3f3f3f;
-        display: block;
-        text-align: center;
-    }
-}
-
-select {
-    width: 30%;
-    margin: 0.2rem auto 1rem;
+label {
+    color: #3f3f3f;
+    margin: 0 1rem;
 }
 </style>

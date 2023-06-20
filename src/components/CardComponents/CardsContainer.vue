@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="found-cards px-3">
-                        You found {{ this.CardsList.length }} cards
+                        {{ this.CardsList.length }} matches
                     </h2>
                 </div>
             </div>
