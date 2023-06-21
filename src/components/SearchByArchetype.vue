@@ -5,11 +5,9 @@
             name="searchArch"
             class="form-select"
             aria-label="Default select example"
-            v-model="archetype">
-            <option
-                v-for="(archetype, index) in ArchetypeList"
-                :value="archetype"
-                @click="$emit('sort', archetype)">
+            v-model="archetype"
+            @change="$emit('sort', archetype)">
+            <option v-for="archetype in ArchetypeList" :value="archetype">
                 {{ archetype }}
             </option>
         </select>
